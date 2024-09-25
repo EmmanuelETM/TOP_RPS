@@ -1,0 +1,11 @@
+getComputerChoice() {
+    randomly generates a number from 1 to 3
+    if that random number is 1, it returns rock, or
+    if that random number is 2, it returns paper, 
+    else it returns scissors
+}
+
+getHumanChoice() {
+    prompts the user to enter its move
+    returns the value
+}
