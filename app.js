@@ -35,5 +35,10 @@ const playRound = (humanChoice, computerChoice) => {
     }
 } 
 
+const playGame = () => {
+    let count = 1;
+    const humanChoice = getHumanChoice()
+    const computerChoice = getComputerChoice()
+}
 
-console.log(playRound(getHumanChoice(), getComputerChoice()))
+playGame();
