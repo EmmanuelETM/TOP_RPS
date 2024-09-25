@@ -14,19 +14,26 @@ const getHumanChoice = () => {
 }
 
 let humanScore, computerScore = 0;
-let rules = {
-    rock: 'paper',
-    paper: 'scissors',
-    scissors: 'rock',
-}
-
-console.log(rules)
-const playRound = (rules, humanChoice, computerChoice) => {
-    humanChoice.toLowerCase()
-    if(humanChoice != 'rock' || humanChoice != 'paper' || humanChoice != 'scissors') return `Error:  ${humanChoice} is not an option try again`
 
 
+const playRound = (humanChoice, computerChoice) => {
+    try {
+        humanChoice = humanChoice.toLowerCase()
+    } catch (error) {
+        return error
+    }
+
+    if(humanChoice === computerChoice) return 'tie'
+    else if (humanChoice == 'rock' && computerChoice == 'scissors' || humanChoice == 'paper' && computerChoice == 'rock' || humanChoice == 'scissors' && computerChoice == 'paper') 
+    {
+        humanScore++;
+        return 'human'
+    }
+    else {
+        computerScore++;
+        return 'computer';
+    }
 } 
 
 
-// console.log(playRound(rules, getHumanChoice(), getComputerChoice()))
+console.log(playRound(getHumanChoice(), getComputerChoice()))
