@@ -1,3 +1,23 @@
+let contentDiv = document.querySelector('.content');
+let dataDiv = document.createElement('div');
+let movesDiv = document.createElement('div');
+
+contentDiv.appendChild(dataDiv);
+contentDiv.appendChild(movesDiv);
+
+// Rock, Paper and Scissors div
+let rockDiv = document.createElement('div');
+rockDiv.classList.add('choice');
+let paperDiv = document.createElement('div');
+paperDiv.classList.add('choice');
+let scissorsDiv = document.createElement('div');
+scissorsDiv.classList.add('choice');
+
+let choiceArr= [rockDiv, paperDiv, scissorsDiv];
+choiceArr.forEach((choice) => movesDiv.appendChild(choice))
+
+
+
 const getComputerChoice = () => {
     let numChoice = Math.floor((Math.random() * 3) + 1);
     if (numChoice === 1) return 'rock'
@@ -6,11 +26,10 @@ const getComputerChoice = () => {
 }
 
 const getHumanChoice = () => {
-    const choice = prompt(`
+    return prompt(`
         Welcome to rock, paper, scissors.
         Select your move:
         `);
-    return choice;
 }
 
 let humanScore = 0;
@@ -24,8 +43,10 @@ const playRound = (humanChoice, computerChoice) => {
         return error
     }
 
-    if(humanChoice === computerChoice) console.log(`Tie!!\nHuman: ${humanScore} PC: ${computerScore}`) 
-    else if (humanChoice == 'rock' && computerChoice == 'scissors' || humanChoice == 'paper' && computerChoice == 'rock' || humanChoice == 'scissors' && computerChoice == 'paper') 
+    if(humanChoice === computerChoice) console.log(`Tie!!\nHuman: ${humanScore} PC: ${computerScore}`)
+    else if (humanChoice === 'rock' && computerChoice === 'scissors'
+        || humanChoice === 'paper' && computerChoice === 'rock'
+        || humanChoice === 'scissors' && computerChoice === 'paper')
     {
         humanScore++;
         console.log(`You won this round!!\nHuman: ${humanScore} PC: ${computerScore}`)
@@ -34,19 +55,8 @@ const playRound = (humanChoice, computerChoice) => {
         computerScore++;
         console.log(`The computer won this round!!\nHuman: ${humanScore} PC: ${computerScore}`)
     }
-} 
-
-const playGame = () => {
-    let count = 0;
-    while (count < 5) {
-        count++;
-        if (humanScore >= 3 || computerScore >= 3) {
-            if (humanScore > computerScore) console.log("The human won the game!!")
-            else console.log("The computer won the game!!")
-            break;
-        }
-        playRound(getHumanChoice(), getComputerChoice())
-    }
 }
 
-playGame();
+//const playGame = () => {
+//    playRound(getHumanChoice(), getComputerChoice())
+//}
