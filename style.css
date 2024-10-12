@@ -2,6 +2,12 @@ body{
     text-align: center;
 }
 
+img {
+    width: 250px;
+    height: 250px;
+    margin-bottom: 10px;
+}
+
 .content{
     display: flex;
     flex-direction: column;
@@ -12,5 +18,15 @@ body{
 
 .moves {
     margin: auto;
-    background-color: pink;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10rem;
+}
+
+.moves div {
+    
+    border: solid black 5px;
+    border-radius: 15%;
+    padding: 2rem;
 }

@@ -1,39 +1,16 @@
-let contentDiv = document.querySelector('.content');
-let dataDiv = document.createElement('div');
-let movesDiv = document.createElement('div');
-// dataDiv.classList.add('data');
-// movesDiv.classList.add('moves');
-// movesDiv.textContent = 'moves';
+const rock = document.querySelector('.rock');
+const paper = document.querySelector('.paper');
+const scissors = document.querySelector('.scissors');
 
-contentDiv.appendChild(dataDiv);
-contentDiv.appendChild(movesDiv);
+const handleClick = (Event) => {
+    console.log(Event.target);
+}
 
-// Rock, Paper and Scissors div
-let rockDiv = document.createElement('div');
-let rockImg = document.createElement('img');
-rockImg.src = './images/rock.png';
-rockImg.width = 100;
-rockImg.height = 100;
-rockDiv.appendChild(rockImg);
-
-let paperDiv = document.createElement('div');
-let paperImg = document.createElement('img');
-paperImg.src = './images/paper.png';
-paperImg.width = 100;
-paperImg.height = 100;
-paperDiv.appendChild(paperImg);
+rock.addEventListener('click', handleClick);
+paper.addEventListener('click', handleClick);
+scissors.addEventListener('click', handleClick);
 
 
-let scissorsDiv = document.createElement('div');
-let scissorsImg = document.createElement('img');
-scissorsImg.src = './images/scissors.png';
-scissorsImg.width = 100;
-scissorsImg.height = 100;
-scissorsDiv.appendChild(scissorsImg);
-
-
-let choiceArr= [rockDiv, paperDiv, scissorsDiv];
-choiceArr.forEach((choice) => movesDiv.appendChild(choice));
 
 
 
