@@ -1,5 +1,5 @@
 body{
-
+    text-align: center;
 }
 
 .content{
@@ -8,4 +8,9 @@ body{
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
+}
+
+.moves {
+    margin: auto;
+    background-color: pink;
 }

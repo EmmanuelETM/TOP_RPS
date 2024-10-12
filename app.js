@@ -1,20 +1,40 @@
 let contentDiv = document.querySelector('.content');
 let dataDiv = document.createElement('div');
 let movesDiv = document.createElement('div');
+// dataDiv.classList.add('data');
+// movesDiv.classList.add('moves');
+// movesDiv.textContent = 'moves';
 
 contentDiv.appendChild(dataDiv);
 contentDiv.appendChild(movesDiv);
 
 // Rock, Paper and Scissors div
 let rockDiv = document.createElement('div');
-rockDiv.classList.add('choice');
+let rockImg = document.createElement('img');
+rockImg.src = './images/rock.png';
+rockImg.width = 100;
+rockImg.height = 100;
+rockDiv.appendChild(rockImg);
+
 let paperDiv = document.createElement('div');
-paperDiv.classList.add('choice');
+let paperImg = document.createElement('img');
+paperImg.src = './images/paper.png';
+paperImg.width = 100;
+paperImg.height = 100;
+paperDiv.appendChild(paperImg);
+
+
 let scissorsDiv = document.createElement('div');
-scissorsDiv.classList.add('choice');
+let scissorsImg = document.createElement('img');
+scissorsImg.src = './images/scissors.png';
+scissorsImg.width = 100;
+scissorsImg.height = 100;
+scissorsDiv.appendChild(scissorsImg);
+
 
 let choiceArr= [rockDiv, paperDiv, scissorsDiv];
-choiceArr.forEach((choice) => movesDiv.appendChild(choice))
+choiceArr.forEach((choice) => movesDiv.appendChild(choice));
+
 
 
 
