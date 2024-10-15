@@ -1,21 +1,4 @@
-const rock = document.querySelector('.rock');
-const paper = document.querySelector('.paper');
-const scissors = document.querySelector('.scissors');
-
-//Event listeners
-
-rock.addEventListener('click',  (Event) => {
-    playRound('rock', getComputerChoice());
-});
-
-paper.addEventListener('click', (Event) => {
-    playRound('paper', getComputerChoice());
-});
-
-scissors.addEventListener('click', (Event) => {
-    playRound('scissors', getComputerChoice());
-});
-
+// Game functions
 
 const getComputerChoice = () => {
     let numChoice = Math.floor((Math.random() * 3) + 1);
@@ -24,38 +7,63 @@ const getComputerChoice = () => {
     else return 'scissors';
 }
 
-const getHumanChoice = () => {
-    return prompt(`
-        Welcome to rock, paper, scissors.
-        Select your move:
-        `);
-}
-
-let humanScore = 0;
-let computerScore = 0;
-
-
 const playRound = (humanChoice, computerChoice) => {
-    try {
-        humanChoice = humanChoice.toLowerCase()
-    } catch (error) {
-        return error
-    }
 
-    if(humanChoice === computerChoice) console.log(`Tie!!\nHuman: ${humanScore} PC: ${computerScore}`)
+    if(humanChoice === computerChoice) {
+        score.textContent = `Human: ${humanScore} PC: ${computerScore}`;
+        data.textContent = 'Tie!!';
+    }
     else if (humanChoice === 'rock' && computerChoice === 'scissors'
         || humanChoice === 'paper' && computerChoice === 'rock'
         || humanChoice === 'scissors' && computerChoice === 'paper')
     {
         humanScore++;
-        console.log(`You won this round!!\nHuman: ${humanScore} PC: ${computerScore}`)
+        score.textContent = `Human: ${humanScore} PC: ${computerScore}`;
+        data.textContent = 'You won this round!!';
     }
     else {
         computerScore++;
-        console.log(`The computer won this round!!\nHuman: ${humanScore} PC: ${computerScore}`)
+        score.textContent = `Human: ${humanScore} PC: ${computerScore}`;
+        data.textContent = 'The computer won this round!!';
     }
 }
 
-//const playGame = () => {
-//    playRound(getHumanChoice(), getComputerChoice())
-//}
+let humanScore = 0;
+let computerScore = 0;
+const rock = document.querySelector('.rock');
+const paper = document.querySelector('.paper');
+const scissors = document.querySelector('.scissors');
+const data = document.querySelector('.data p');
+const score = document.querySelector('.data h3');
+const restart = document.querySelector('.data button');
+
+
+const playGame = () => {
+    //Event listeners
+
+    rock.addEventListener('click',  (Event) => {
+        playRound('rock', getComputerChoice());
+    });
+
+    paper.addEventListener('click', (Event) => {
+        playRound('paper', getComputerChoice());
+    });
+
+    scissors.addEventListener('click', (Event) => {
+        playRound('scissors', getComputerChoice());
+    });
+
+    restart.addEventListener('click', () => {
+        console.log('restart clicked');
+        humanScore = 0;
+        computerScore = 0;
+        score.textContent = `Human: ${humanScore} PC: ${computerScore}`;
+        data.textContent =  'Play your move';
+    })
+
+
+}
+
+score.textContent = `Human: ${humanScore} PC: ${computerScore}`;
+data.textContent =  'Play your move';
+playGame();

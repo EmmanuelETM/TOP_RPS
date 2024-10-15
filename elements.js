@@ -48,8 +48,11 @@ let restartButton = document.createElement('button');
 restartButton.classList.add('restart');
 restartButton.textContent = 'Restart';
 
+let dataP = document.createElement('p');
+let scoreH3 = document.createElement('h3');
 
 dataDiv.appendChild(restartButton);
-
+dataDiv.appendChild(scoreH3);
+dataDiv.appendChild(dataP);
 contentDiv.appendChild(dataDiv);
 contentDiv.appendChild(movesDiv);
