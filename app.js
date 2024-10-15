@@ -2,17 +2,19 @@ const rock = document.querySelector('.rock');
 const paper = document.querySelector('.paper');
 const scissors = document.querySelector('.scissors');
 
-const handleClick = (Event) => {
-    console.log(Event.target);
-}
+//Event listeners
 
-rock.addEventListener('click', handleClick);
-paper.addEventListener('click', handleClick);
-scissors.addEventListener('click', handleClick);
+rock.addEventListener('click',  (Event) => {
+    playRound('rock', getComputerChoice());
+});
 
+paper.addEventListener('click', (Event) => {
+    playRound('paper', getComputerChoice());
+});
 
-
-
+scissors.addEventListener('click', (Event) => {
+    playRound('scissors', getComputerChoice());
+});
 
 
 const getComputerChoice = () => {

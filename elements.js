@@ -5,10 +5,7 @@ let movesDiv = document.createElement('div');
 dataDiv.classList.add('data');
 movesDiv.classList.add('moves');
 
-contentDiv.appendChild(dataDiv);
-contentDiv.appendChild(movesDiv);
-
-// Rock, Paper and Scissors div
+// Moves div
 let rockDiv = document.createElement('div');
 let rockText = document.createElement('p');
 let rockImg = document.createElement('img');
@@ -46,4 +43,13 @@ movesDiv.appendChild(paperDiv);
 movesDiv.appendChild(scissorsDiv);
 
 
+// Data div
+let restartButton = document.createElement('button');
+restartButton.classList.add('restart');
+restartButton.textContent = 'Restart';
 
+
+dataDiv.appendChild(restartButton);
+
+contentDiv.appendChild(dataDiv);
+contentDiv.appendChild(movesDiv);
