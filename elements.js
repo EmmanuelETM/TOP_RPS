@@ -46,11 +46,15 @@ movesDiv.appendChild(scissorsDiv);
 // Data div
 let restartButton = document.createElement('button');
 restartButton.textContent = 'Restart';
-let dataP = document.createElement('p');
 let scoreH3 = document.createElement('h3');
+let movesP = document.createElement('p'); 
+movesP.classList.add('moves-p')
+let dataP = document.createElement('p');
+dataP.classList.add('data-p');
 
 dataDiv.appendChild(restartButton);
 dataDiv.appendChild(scoreH3);
+dataDiv.appendChild(movesP);
 dataDiv.appendChild(dataP);
 contentDiv.appendChild(dataDiv);
 contentDiv.appendChild(movesDiv);
