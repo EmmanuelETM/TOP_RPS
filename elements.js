@@ -52,9 +52,11 @@ movesP.classList.add('moves-p')
 let dataP = document.createElement('p');
 dataP.classList.add('data-p');
 
-dataDiv.appendChild(restartButton);
 dataDiv.appendChild(scoreH3);
 dataDiv.appendChild(movesP);
 dataDiv.appendChild(dataP);
+dataDiv.appendChild(restartButton);
+
+
 contentDiv.appendChild(dataDiv);
 contentDiv.appendChild(movesDiv);
